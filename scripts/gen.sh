@@ -1,0 +1,7 @@
+#!/bin/bash
+# Run from repo root
+
+protoc -I=. helloworld.proto \
+  --js_out=import_style=commonjs:. \
+  --grpc-web_out=import_style=commonjs,mode=grpcwebtext:. \
+  --go_out=plugins=grpc:.

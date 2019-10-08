@@ -1,0 +1,28 @@
+{
+  "name": "@marcy-cloud/api",
+  "version": "0.0.2",
+  "repository": "https://github.com/marcy-cloud/api",
+  "description": "gRPC API for Marcy.cloud",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "build": "protoc -I=. marcy.proto --js_out=import_style=commonjs:. --grpc-web_out=import_style=commonjs,mode=grpcwebtext:. --go_out=plugins=grpc:."
+  },
+  "files": [
+    "*.js",
+    "*.proto"
+  ],
+  "dependencies": {
+    "grpc-web": "^1.0.0",
+    "google-protobuf": "^3.6.1"
+  },
+  "devDependencies": {
+    "@grpc/proto-loader": "^0.3.0",
+    "async": "^1.5.2",
+    "grpc": "^1.15.0",
+    "lodash": "^4.6.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
